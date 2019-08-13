@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="GorillaTest.View.LoginView"
+             BackgroundColor="Gray">
+    <StackLayout  VerticalOptions="Center"
+                  Padding="20,10">
+        <!--User-->
+        <StackLayout>
+            <Label Text="User:"/>
+            <Entry Text=""
+                   Placeholder="Enter Text"/>
+        </StackLayout>
+         <!--Password-->
+        <StackLayout>
+            <Label Text="Password:"/>
+            <Entry Text=""
+                   Placeholder="Enter Password"
+                   IsPassword="true"/>
+        </StackLayout>
+        <Button Text="LOGIN"/>
+    </StackLayout>
+</ContentPage>

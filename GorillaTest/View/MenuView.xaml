@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="GorillaTest.View.MenuView"
+             x:Name="MenuViewPage"
+             Title="Menu">
+    <StackLayout>
+        <!--Image Container-->
+        <StackLayout>
+            <Label Text="{Binding TestLabel}"/>
+            <Image HeightRequest="20" 
+                   Source="https://images.vexels.com/media/users/3/147101/isolated/preview/b4a49d4b864c74bb73de63f080ad7930-instagram-profile-button-by-vexels.png"/>
+        </StackLayout>
+        <!--Menu List-->
+        <StackLayout>
+            <ListView ItemsSource="{Binding lstMenu}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Name}" 
+                                  Detail="Este es el detalle"
+                                  Command="{Binding Path=BindingContext.SelectedMenuCommand, Source={x:Reference MenuViewPage}}"
+                                  CommandParameter="{Binding Id}"/>
+                        </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>
