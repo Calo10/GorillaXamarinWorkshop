@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Windows.Input;
 using GorillaTest.Model;
+using GorillaTest.View;
+using Xamarin.Forms;
 
 namespace GorillaTest.ViewModel
 {
@@ -36,6 +39,8 @@ namespace GorillaTest.ViewModel
             }
         }
 
+        public ICommand EnterAddStudentCommand { get; set;}
+        public ICommand AddStudentCommand { get; set; }
         #endregion
 
         #region Singleton
@@ -43,8 +48,8 @@ namespace GorillaTest.ViewModel
 
         private StudentViewModel()
         {
-            //InitCommands();
-            //InitClass();
+            InitCommands();
+            InitClass();
         }
 
         public static StudentViewModel GetInstance()
@@ -68,6 +73,34 @@ namespace GorillaTest.ViewModel
 
         #region Methods
 
+        public void EnterAddStudent()
+        {
+            ((MasterDetailPage)App.Current.MainPage).Detail.Navigation.PushAsync(new StudentAddView());
+        }
+
+        public async void AddStudent()
+        {
+            await StudentModel.AddStudent(CurrentStudent);
+
+
+            lstStudent = await StudentModel.GetAllStudents();
+
+            CurrentStudent = new StudentModel();
+
+            await ((MasterDetailPage)App.Current.MainPage).Detail.Navigation.PopAsync();
+        }
+
+
+        private void InitClass()
+        {
+
+        }
+
+        private void InitCommands()
+        {
+            EnterAddStudentCommand = new Command(EnterAddStudent);
+            AddStudentCommand = new Command(AddStudent);
+        }
         #endregion
 
         #region INotifyPropertyChanged Implementation

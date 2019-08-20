@@ -30,10 +30,17 @@ namespace GorillaTest.ViewModel
         {
             switch (id)
             {
-                //Formulario
+                //Form
                 case 1:
 
                     ((MasterDetailPage)App.Current.MainPage).Detail.Navigation.PushAsync(new ContactFormView());
+
+                    break;
+
+                //Student
+                case 2:
+
+                    ((MasterDetailPage)App.Current.MainPage).Detail.Navigation.PushAsync(new StudentHomeView());
 
                     break;
                 default:
