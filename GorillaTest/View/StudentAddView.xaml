@@ -1,5 +1,38 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="GorillaTest.View.StudentAddView">
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="GorillaTest.View.StudentAddView">
     <ContentPage.Content>
+      <StackLayout>
+         <StackLayout VerticalOptions="Start"
+                 Padding="20,10">
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Name" />
+                     <Entry Text="{Binding CurrentStudent.Name}" 
+                            Placeholder="Enter Name"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Last Name:" />
+                     <Entry Text="{Binding CurrentStudent.LastName}" 
+                           Placeholder="Enter Name"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Age" />
+                     <Entry Text="{Binding CurrentStudent.Age}" 
+                           Placeholder="Enter Age"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Detail" />
+                     <Entry Text="{Binding CurrentStudent.Detail}" 
+                           Placeholder="Enter Detail"/>
+                </StackLayout>
+                 <StackLayout Orientation="Horizontal">
+                    <Label Text="Detail" />
+                     <Entry Text="{Binding CurrentStudent.Gender}" 
+                           Placeholder="Enter Gender"/>
+                </StackLayout>
+                <Button Text="Submit" Command="{Binding AddStudentCommand}"/>
+            </StackLayout>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

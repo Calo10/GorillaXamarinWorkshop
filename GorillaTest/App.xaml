@@ -1,5 +1,11 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Application xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="GorillaTest.App">
+<?xml version="1.0" encoding="utf-8"?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="GorillaTest.App">
     <Application.Resources>
+         <!--Color Dictionary-->
+        <Color x:Key="PrincipalColor">#181a1c</Color>
+        <Color x:Key="SecundaryColor">#3a3c40</Color>
+        <Color x:Key="TextPrimaryColor">#9b9b9b</Color>
     </Application.Resources>
 </Application>

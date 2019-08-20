@@ -1,23 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-             x:Class="GorillaTest.View.LoginView"
-             BackgroundColor="Gray">
+             xmlns:xfg="clr-namespace:XFGloss;assembly=XFGloss"
+             x:Class="GorillaTest.View.LoginView">
+    <xfg:ContentPageGloss.BackgroundGradient>
+        <xfg:Gradient Rotation="135">
+            <xfg:GradientStep StepColor="{StaticResource PrincipalColor}" StepPercentage="0" />
+            <xfg:GradientStep StepColor="{StaticResource SecundaryColor}" StepPercentage="1" />
+        </xfg:Gradient>
+    </xfg:ContentPageGloss.BackgroundGradient>
     <StackLayout  VerticalOptions="Center"
                   Padding="20,10">
-        <!--User-->
-        <StackLayout>
-            <Label Text="User:"/>
-            <Entry Text=""
-                   Placeholder="Enter Text"/>
-        </StackLayout>
-         <!--Password-->
-        <StackLayout>
-            <Label Text="Password:"/>
-            <Entry Text=""
-                   Placeholder="Enter Password"
-                   IsPassword="true"/>
-        </StackLayout>
-        <Button Text="LOGIN"/>
+       <Frame CornerRadius="15">
+            <StackLayout BackgroundColor="Transparent">
+                <!--User-->
+                <StackLayout>
+                    <Label Text="User:"
+                           TextColor="{StaticResource TextPrimaryColor}"/>
+                    <Entry Text=""
+                           Placeholder="Enter Text"/>
+                </StackLayout>
+                 <!--Password-->
+                <StackLayout>
+                    <Label Text="Password:"
+                           TextColor="{StaticResource TextPrimaryColor}"/>
+                    <Entry Text=""
+                           Placeholder="Enter Password"
+                           IsPassword="true"/>
+                </StackLayout>
+                <Button Text="LOGIN"/>
+            </StackLayout>
+        </Frame>
     </StackLayout>
 </ContentPage>

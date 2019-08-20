@@ -5,14 +5,45 @@
     <ContentPage.Content>
         <!--Student List-->
         <StackLayout>
-            <ListView ItemsSource="{Binding lstStudents}">
+            <ListView ItemsSource="{Binding lstStudents}"
+                      HasUnevenRows="true">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <TextCell Text="{Binding Name}" 
-                                  Detail="Este es el detalle"
-                                  Command="{Binding Path=BindingContext.SelectedMenuCommand, Source={x:Reference MenuViewPage}}"
-                                  CommandParameter="{Binding Id}"/>
-                        </DataTemplate>
+                       <ViewCell>
+                            <!--Custom Row-->
+                            <StackLayout Padding="10">
+                                
+                                 <!--Col 1-->
+                                <StackLayout>
+                                    <!--Id-->
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="ID:"/>
+                                        <Label Text="{Binding Id}"/>
+                                    </StackLayout>
+                                    <!--Name-->
+                                    <StackLayout>
+                                        <Label Text="Name"/>
+                                        <Label Text="{Binding Name}"/>
+                                    </StackLayout>
+                                        <!--Gender-->
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="Gender:"/>
+                                        <Label Text="{Binding Gender}"/>
+                                    </StackLayout>
+                                </StackLayout>
+                                        
+                                <!--Col 2-->
+                                <StackLayout>
+                                    <!--Id-->
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="Age:"/>
+                                        <Label Text="{Binding Age}"/>
+                                    </StackLayout>
+                                </StackLayout>
+                                
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
             <Button Text="Agregar Nuevo" Command="{Binding EnterAddStudentCommand}"/>

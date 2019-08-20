@@ -5,22 +5,22 @@
     <StackLayout>
          <StackLayout VerticalOptions="Start"
                  Padding="20,10">
-        <StackLayout Orientation="Horizontal">
-            <Label Text="Name" />
-             <Entry Text="" 
-                   Placeholder="Enter Name"/>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Name" />
+                 <Entry Text="" 
+                       Placeholder="Enter Name"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Email" />
+                 <Entry Text="" 
+                       Placeholder="Enter Email"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Age" />
+                 <Entry Text="" 
+                       Placeholder="Enter Age"/>
+            </StackLayout>
+            <Button Text="Submit" />
         </StackLayout>
-        <StackLayout Orientation="Horizontal">
-            <Label Text="Email" />
-             <Entry Text="" 
-                   Placeholder="Enter Email"/>
-        </StackLayout>
-        <StackLayout Orientation="Horizontal">
-            <Label Text="Age" />
-             <Entry Text="" 
-                   Placeholder="Enter Age"/>
-        </StackLayout>
-        <Button Text="Submit" />
-    </StackLayout>
     </StackLayout>
 </ContentPage>
